@@ -1,0 +1,777 @@
+Naive Bayes Classifier for Discrete Predictors
+
+Call:
+naiveBayes.default(x = X, y = Y, laplace = laplace)
+
+A-priori probabilities:
+Y
+      Action    Adventure     Fighting         Misc     Platform       Puzzle       Racing Role-Playing 
+ 0.347747748  0.072072072  0.055855856  0.039639640  0.034234234  0.001801802  0.052252252  0.126126126 
+     Shooter   Simulation       Sports     Strategy 
+ 0.122522523  0.016216216  0.117117117  0.014414414 
+
+Conditional probabilities:
+              Sell
+Y                   [,1]      [,2]
+  Action       0.2020725 0.4025904
+  Adventure    0.0750000 0.2667468
+  Fighting     0.2258065 0.4250237
+  Misc         0.2727273 0.4558423
+  Platform     0.3684211 0.4955946
+  Puzzle       1.0000000        NA
+  Racing       0.2068966 0.4122508
+  Role-Playing 0.1857143 0.3916837
+  Shooter      0.5147059 0.5034996
+  Simulation   0.1111111 0.3333333
+  Sports       0.2769231 0.4509605
+  Strategy     0.0000000 0.0000000
+
+              Rank
+Y                  [,1]     [,2]
+  Action       6457.503 3838.617
+  Adventure    8614.875 3250.167
+  Fighting     6665.097 3735.520
+  Misc         5121.818 3187.567
+  Platform     6304.211 4551.297
+  Puzzle       1689.000       NA
+  Racing       7557.069 4103.683
+  Role-Playing 6800.243 3841.163
+  Shooter      3881.721 3772.051
+  Simulation   6193.556 3503.382
+  Sports       6384.277 4418.085
+  Strategy     8618.125 3254.250
+
+              Name
+Y              2014 FIFA World Cup Brazil 7 Days to Die Adventure Time: Finn & Jake Investigations
+  Action                      0.000000000   0.005181347                                0.015544041
+  Adventure                   0.000000000   0.000000000                                0.000000000
+  Fighting                    0.000000000   0.000000000                                0.000000000
+              Name
+Y              Aegis of Earth: Protonovus Assault Alien: Isolation Animal Crossing: Amiibo Festival
+  Action                              0.005181347      0.000000000                      0.000000000
+  Adventure                           0.000000000      0.000000000                      0.000000000
+  Fighting                            0.000000000      0.000000000                      0.000000000
+              Name
+Y              Animal Crossing: Happy Home Designer   Anno 2205 Ar Nosurge: Ode to an Unborn Star
+  Action                                0.000000000 0.000000000                       0.000000000
+  Adventure                             0.000000000 0.000000000                       0.000000000
+  Fighting                              0.000000000 0.000000000                       0.000000000
+              Name
+Y              Arcana Heart 3 Assassin's Creed Chronicles Assassin's Creed Chronicles: China
+  Action          0.000000000                 0.010362694                        0.005181347
+  Adventure       0.000000000                 0.000000000                        0.000000000
+  Fighting        0.032258065                 0.000000000                        0.000000000
+              Name
+Y              Assassin's Creed Syndicate Assassin's Creed: Rogue Assassin's Creed: Unity Assetto Corsa
+  Action                      0.010362694             0.010362694             0.010362694   0.000000000
+  Adventure                   0.000000000             0.000000000             0.000000000   0.000000000
+  Fighting                    0.000000000             0.000000000             0.000000000   0.000000000
+              Name
+Y              Atelier Shallie: Alchemists of the Dusk Sea Atelier Sophie: The Alchemist of the Mysterious Book
+  Action                                       0.000000000                                          0.000000000
+  Adventure                                    0.000000000                                          0.000000000
+  Fighting                                     0.000000000                                          0.000000000
+              Name
+Y              Batman: Arkham Knight  Battleborn Battlefield: Hardline Bayonetta 2 BioShock The Collection
+  Action                 0.015544041 0.000000000           0.000000000 0.005181347             0.000000000
+  Adventure              0.000000000 0.000000000           0.000000000 0.000000000             0.000000000
+  Fighting               0.000000000 0.000000000           0.000000000 0.000000000             0.000000000
+              Name
+Y              BlazBlue: Chrono Phantasma Extend  Bloodborne Borderlands 2 Borderlands: The Handsome Collection
+  Action                             0.015544041 0.005181347   0.000000000                          0.000000000
+  Adventure                          0.000000000 0.000000000   0.000000000                          0.000000000
+  Fighting                           0.000000000 0.000000000   0.000000000                          0.000000000
+              Name
+Y              Borderlands: The Pre-Sequel Bound By Flame Bravely Second: End Layer
+  Action                       0.000000000    0.000000000               0.000000000
+  Adventure                    0.000000000    0.000000000               0.000000000
+  Fighting                     0.000000000    0.000000000               0.000000000
+              Name
+Y              Broken Sword 5: The Serpent's Curse Brothers: A Tale of Two Sons Call of Duty: Advanced Warfare
+  Action                               0.000000000                  0.000000000                    0.000000000
+  Adventure                            0.025000000                  0.025000000                    0.000000000
+  Fighting                             0.000000000                  0.000000000                    0.000000000
+              Name
+Y              Call of Duty: Black Ops 3 Captain Toad: Treasure Tracker Chibi-Robo! Zip Lash Child of Light
+  Action                     0.000000000                    0.000000000          0.000000000    0.000000000
+  Adventure                  0.000000000                    0.000000000          0.000000000    0.000000000
+  Fighting                   0.000000000                    0.000000000          0.000000000    0.000000000
+              Name
+Y              Cities: Skylines Code Name: S.T.E.A.M. Code:Realize - Sousei no Himegimi
+  Action            0.000000000           0.000000000                       0.000000000
+  Adventure         0.000000000           0.000000000                       0.025000000
+  Fighting          0.000000000           0.000000000                       0.000000000
+              Name
+Y              Corpse Party: Blood Drive Danganronpa 2: Goodbye Despair Dark Souls II Dark Souls III
+  Action                     0.000000000                    0.000000000   0.000000000    0.000000000
+  Adventure                  0.025000000                    0.000000000   0.000000000    0.000000000
+  Fighting                   0.000000000                    0.000000000   0.000000000    0.000000000
+              Name
+Y              Darksiders II Dead Island Definitive Collection Dead or Alive 5    Deadpool
+  Action         0.005181347                       0.005181347     0.000000000 0.005181347
+  Adventure      0.000000000                       0.000000000     0.000000000 0.000000000
+  Fighting       0.000000000                       0.000000000     0.064516129 0.000000000
+              Name
+Y              Dengeki Bunko Fighting Climax     Destiny Destiny: The Collection Destiny: The Taken King
+  Action                         0.000000000 0.000000000             0.000000000             0.000000000
+  Adventure                      0.000000000 0.000000000             0.000000000             0.000000000
+  Fighting                       0.032258065 0.000000000             0.000000000             0.000000000
+              Name
+Y              Deus Ex: Mankind Divided  Diablo III Digimon All-Star Rumble Digimon Story: Cyber Sleuth
+  Action                    0.000000000 0.000000000             0.000000000                 0.000000000
+  Adventure                 0.000000000 0.000000000             0.000000000                 0.000000000
+  Fighting                  0.000000000 0.000000000             0.032258065                 0.000000000
+              Name
+Y               DiRT Rally Disgaea 4: A Promise Unforgotten Disgaea 5: Alliance of Vengeance  Dishonored
+  Action       0.000000000                      0.000000000                      0.000000000 0.010362694
+  Adventure    0.000000000                      0.000000000                      0.000000000 0.000000000
+  Fighting     0.000000000                      0.000000000                      0.000000000 0.000000000
+              Name
+Y              Disney Infinity 2.0: Marvel Super Heroes Disney Infinity 3.0 Disney Planes Fire & Rescue
+  Action                                    0.005181347         0.020725389                 0.005181347
+  Adventure                                 0.000000000         0.000000000                 0.000000000
+  Fighting                                  0.000000000         0.000000000                 0.000000000
+              Name
+Y              Divinity: Original Sin DmC: Devil May Cry Don Bradman Cricket 14
+  Action                  0.000000000        0.005181347            0.000000000
+  Adventure               0.000000000        0.000000000            0.000000000
+  Fighting                0.000000000        0.000000000            0.000000000
+              Name
+Y              Donkey Kong Country: Tropical Freeze Doom (2016) Dragon Age: Inquisition
+  Action                                0.000000000 0.000000000             0.000000000
+  Adventure                             0.000000000 0.000000000             0.000000000
+  Fighting                              0.000000000 0.000000000             0.000000000
+              Name
+Y              Dragon Ball Z: Battle of Z Dragon Ball Z: Extreme Butoden Dragon Ball: XenoVerse
+  Action                      0.000000000                    0.000000000            0.000000000
+  Adventure                   0.000000000                    0.000000000            0.000000000
+  Fighting                    0.064516129                    0.032258065            0.129032258
+              Name
+Y              Dragon Quest Heroes: The World's Tree Woe and the Blight Below
+  Action                                                          0.005181347
+  Adventure                                                       0.000000000
+  Fighting                                                        0.000000000
+              Name
+Y              Dungeon Travelers 2: The Royal Library & The Monster Seal Dying Light
+  Action                                                     0.000000000 0.005181347
+  Adventure                                                  0.000000000 0.000000000
+  Fighting                                                   0.000000000 0.000000000
+              Name
+Y              Dynasty Warriors 8: Empires EA Sports UFC EA Sports UFC 2
+  Action                       0.010362694   0.000000000     0.000000000
+  Adventure                    0.000000000   0.000000000     0.000000000
+  Fighting                     0.000000000   0.000000000     0.000000000
+              Name
+Y              Earth Defense Force 2: Invaders from Planet Space
+  Action                                             0.005181347
+  Adventure                                          0.000000000
+  Fighting                                           0.000000000
+              Name
+Y              Earth Defense Force 4.1: The Shadow of New Despair Enemy Front Escape Dead Island
+  Action                                              0.000000000 0.000000000        0.005181347
+  Adventure                                           0.000000000 0.000000000        0.000000000
+  Fighting                                            0.000000000 0.000000000        0.000000000
+              Name
+Y              Etrian Mystery Dungeon Etrian Odyssey 2 Untold: Knight of Fafnir      Evolve     F1 2014
+  Action                  0.000000000                               0.000000000 0.000000000 0.000000000
+  Adventure               0.000000000                               0.000000000 0.000000000 0.000000000
+  Fighting                0.000000000                               0.000000000 0.000000000 0.000000000
+              Name
+Y                  F1 2015 F1 2016 (Codemasters)       Fable   Fallout 4 Fantasia: Music Evolved   Far Cry 4
+  Action       0.000000000           0.000000000 0.000000000 0.000000000             0.000000000 0.000000000
+  Adventure    0.000000000           0.000000000 0.000000000 0.000000000             0.000000000 0.000000000
+  Fighting     0.000000000           0.000000000 0.000000000 0.000000000             0.000000000 0.000000000
+              Name
+Y              Far Cry: Primal Farming Simulator 2015     FIFA 15     FIFA 17 Final Fantasy Explorers
+  Action           0.015544041            0.000000000 0.000000000 0.000000000             0.000000000
+  Adventure        0.000000000            0.000000000 0.000000000 0.000000000             0.000000000
+  Fighting         0.000000000            0.000000000 0.000000000 0.000000000             0.000000000
+              Name
+Y              Final Fantasy Type-0 Final Fantasy XIV: A Realm Reborn Final Fantasy XIV: Heavensward
+  Action                0.000000000                       0.000000000                    0.005181347
+  Adventure             0.000000000                       0.000000000                    0.000000000
+  Fighting              0.000000000                       0.000000000                    0.000000000
+              Name
+Y              Fire Emblem Fates Football Manager 2015 Forza Horizon 2 Forza Motorsport 6 Freedom Wars
+  Action             0.000000000           0.000000000     0.000000000        0.000000000  0.000000000
+  Adventure          0.000000000           0.000000000     0.000000000        0.000000000  0.000000000
+  Fighting           0.000000000           0.000000000     0.000000000        0.000000000  0.000000000
+              Name
+Y              Ghostbusters (2016) God of War Collection Godzilla (2015) Goosebumps: The Game
+  Action               0.005181347           0.005181347     0.005181347          0.000000000
+  Adventure            0.000000000           0.000000000     0.000000000          0.025000000
+  Fighting             0.000000000           0.000000000     0.000000000          0.000000000
+              Name
+Y              Grand Ages: Medieval Grand Theft Auto V GRID Autosport Guilty Gear Xrd -Revelator-
+  Action                0.000000000        0.010362694    0.000000000                 0.000000000
+  Adventure             0.000000000        0.000000000    0.000000000                 0.000000000
+  Fighting              0.000000000        0.000000000    0.000000000                 0.032258065
+              Name
+Y              Guilty Gear Xrd: Sign Guitar Hero Live Halo: The Master Chief Collection Handball 16
+  Action                 0.000000000      0.000000000                       0.000000000 0.000000000
+  Adventure              0.000000000      0.000000000                       0.000000000 0.000000000
+  Fighting               0.064516129      0.000000000                       0.000000000 0.000000000
+              Name
+Y              Hasbro Family Fun Pack Hatsune Miku: Project Diva F 2nd Homefront: The Revolution
+  Action                  0.000000000                      0.000000000               0.000000000
+  Adventure               0.000000000                      0.000000000               0.000000000
+  Fighting                0.000000000                      0.000000000               0.000000000
+              Name
+Y              How to Train Your Dragon 2 Hyperdimension Neptunia Re;Birth 2 Hyperdimension Neptunia Re;Birth 3
+  Action                      0.000000000                        0.005181347                        0.005181347
+  Adventure                   0.125000000                        0.000000000                        0.000000000
+  Fighting                    0.000000000                        0.000000000                        0.000000000
+              Name
+Y              Hyrule Warriors Infamous: First Light inFAMOUS: Second Son J Stars Victory Vs. Just Cause 3
+  Action           0.010362694           0.005181347          0.005181347         0.000000000  0.010362694
+  Adventure        0.000000000           0.000000000          0.000000000         0.000000000  0.000000000
+  Fighting         0.000000000           0.000000000          0.000000000         0.096774194  0.000000000
+              Name
+Y              Just Dance 2015 Just Dance 2016 Just Dance: Disney Party 2 Kinect Sports Rivals
+  Action           0.000000000     0.000000000                0.015544041          0.000000000
+  Adventure        0.000000000     0.000000000                0.000000000          0.000000000
+  Fighting         0.000000000     0.000000000                0.000000000          0.000000000
+              Name
+Y              Kirby and the Rainbow Curse Kirby: Planet Robobot Lara Croft and the Temple of Osiris
+  Action                       0.000000000           0.005181347                         0.005181347
+  Adventure                    0.000000000           0.000000000                         0.000000000
+  Fighting                     0.000000000           0.000000000                         0.000000000
+              Name
+Y              Lego Batman 3: Beyond Gotham LEGO Dimensions LEGO Jurassic World LEGO Marvel's Avengers
+  Action                        0.031088083     0.015544041         0.015544041            0.025906736
+  Adventure                     0.000000000     0.000000000         0.000000000            0.000000000
+  Fighting                      0.000000000     0.000000000         0.000000000            0.000000000
+              Name
+Y              LEGO Ninjago: Shadow of Ronin Lego Star Wars: The Force Awakens LEGO The Hobbit Life is Strange
+  Action                         0.010362694                       0.025906736     0.036269430     0.000000000
+  Adventure                      0.000000000                       0.000000000     0.000000000     0.025000000
+  Fighting                       0.000000000                       0.000000000     0.000000000     0.000000000
+              Name
+Y              LittleBigPlanet 3 Lords of the Fallen Mad Max (2015) Madden NFL 15 Madden NFL 16 Madden NFL 17
+  Action             0.000000000         0.000000000    0.005181347   0.000000000   0.000000000   0.000000000
+  Adventure          0.000000000         0.000000000    0.000000000   0.000000000   0.000000000   0.000000000
+  Fighting           0.000000000         0.000000000    0.000000000   0.000000000   0.000000000   0.000000000
+              Name
+Y              Makai Shin Trillion Mario & Luigi: Paper Jam Mario & Sonic at the Rio 2016 Olympic Games
+  Action               0.000000000              0.000000000                                 0.010362694
+  Adventure            0.000000000              0.000000000                                 0.000000000
+  Fighting             0.000000000              0.000000000                                 0.000000000
+              Name
+Y              Mario Golf: World Tour Mario Kart 8 Mario Party 10 Mario Tennis Ultra Smash
+  Action                  0.000000000  0.000000000    0.000000000              0.000000000
+  Adventure               0.000000000  0.000000000    0.000000000              0.000000000
+  Fighting                0.000000000  0.000000000    0.000000000              0.000000000
+              Name
+Y              Mega Man Legacy Collection Metal Gear Solid V: Ground Zeroes
+  Action                      0.000000000                       0.010362694
+  Adventure                   0.000000000                       0.000000000
+  Fighting                    0.000000000                       0.000000000
+              Name
+Y              Metal Gear Solid V: The Phantom Pain Metro: Last Light Middle-Earth: Shadow of Mordor
+  Action                                0.005181347       0.005181347                    0.020725389
+  Adventure                             0.000000000       0.000000000                    0.000000000
+  Fighting                              0.000000000       0.000000000                    0.000000000
+              Name
+Y              Mighty No. 9   Minecraft Minecraft: Story Mode Mirror's Edge Catalyst MLB 14: The Show
+  Action        0.000000000 0.000000000           0.000000000            0.000000000      0.000000000
+  Adventure     0.000000000 0.000000000           0.100000000            0.000000000      0.000000000
+  Fighting      0.000000000 0.000000000           0.000000000            0.000000000      0.000000000
+              Name
+Y              MLB 15: The Show MLB 16: The Show Monster High: New Ghoul in School Mortal Kombat X   MotoGP 14
+  Action            0.000000000      0.005181347                       0.005181347     0.000000000 0.000000000
+  Adventure         0.000000000      0.000000000                       0.000000000     0.000000000 0.000000000
+  Fighting          0.000000000      0.000000000                       0.000000000     0.032258065 0.000000000
+              Name
+Y              MX vs. ATV Supercross      MXGP 2 Naruto Shippuden: Ultimate Ninja Storm 4
+  Action                 0.000000000 0.000000000                              0.000000000
+  Adventure              0.000000000 0.000000000                              0.000000000
+  Fighting               0.000000000 0.000000000                              0.032258065
+              Name
+Y              Naruto Shippuden: Ultimate Ninja Storm Revolution  NASCAR '14 Natural Doctrine    NBA 2K15
+  Action                                             0.000000000 0.000000000      0.000000000 0.000000000
+  Adventure                                          0.000000000 0.000000000      0.000000000 0.000000000
+  Fighting                                           0.064516129 0.000000000      0.000000000 0.000000000
+              Name
+Y                 NBA 2K16    NBA 2K17 NBA Live 15 NBA Live 16 Need for Speed (2015)   NES Remix      NHL 15
+  Action       0.000000000 0.000000000 0.000000000 0.000000000           0.000000000 0.005181347 0.000000000
+  Adventure    0.000000000 0.000000000 0.000000000 0.000000000           0.000000000 0.000000000 0.000000000
+  Fighting     0.000000000 0.000000000 0.000000000 0.000000000           0.000000000 0.000000000 0.000000000
+              Name
+Y                   NHL 16  NHL Legacy No Man's Sky Nobunaga's Ambition: Sphere of Influence
+  Action       0.000000000 0.005181347  0.005181347                              0.000000000
+  Adventure    0.000000000 0.000000000  0.000000000                              0.000000000
+  Fighting     0.000000000 0.000000000  0.000000000                              0.000000000
+              Name
+Y              Odin Sphere: Leifthrasir One Piece: Burning Blood One Piece: Pirate Warriors 3
+  Action                    0.000000000              0.000000000                  0.015544041
+  Adventure                 0.000000000              0.000000000                  0.000000000
+  Fighting                  0.000000000              0.032258065                  0.000000000
+              Name
+Y              One Piece: Unlimited World Red Operation Abyss: New Tokyo Legacy
+  Action                          0.010362694                       0.000000000
+  Adventure                       0.000000000                       0.000000000
+  Fighting                        0.000000000                       0.000000000
+              Name
+Y              Pac-Man and the Ghostly Adventures 2    Payday 2 Persona 4: Arena Ultimax
+  Action                                0.000000000 0.000000000              0.000000000
+  Adventure                             0.075000000 0.000000000              0.000000000
+  Fighting                              0.000000000 0.000000000              0.032258065
+              Name
+Y              Persona Q: Shadow of the Labyrinth Plants vs. Zombies: Garden Warfare Pokemon Art Academy
+  Action                              0.000000000                        0.000000000         0.000000000
+  Adventure                           0.000000000                        0.000000000         0.000000000
+  Fighting                            0.000000000                        0.000000000         0.000000000
+              Name
+Y              Pokemon Omega Ruby/Pokemon Alpha Sapphire Pokken Tournament Pro Evolution Soccer 2015
+  Action                                     0.000000000       0.000000000               0.000000000
+  Adventure                                  0.000000000       0.000000000               0.000000000
+  Fighting                                   0.000000000       0.032258065               0.000000000
+              Name
+Y              Pro Evolution Soccer 2016 Pro Evolution Soccer 2017 Project CARS
+  Action                     0.000000000               0.000000000  0.000000000
+  Adventure                  0.000000000               0.000000000  0.000000000
+  Fighting                   0.000000000               0.000000000  0.000000000
+              Name
+Y              Project X Zone 2: Brave New World Quantum Break Ratchet & Clank (2016)
+  Action                             0.000000000   0.005181347            0.000000000
+  Adventure                          0.000000000   0.000000000            0.000000000
+  Fighting                           0.000000000   0.000000000            0.000000000
+              Name
+Y              Ratchet & Clank Collection Rayman Legends Resident Evil 4 HD Resident Evil 6 Resident Evil Zero
+  Action                      0.005181347    0.000000000        0.000000000     0.000000000        0.010362694
+  Adventure                   0.000000000    0.000000000        0.000000000     0.000000000        0.000000000
+  Fighting                    0.000000000    0.000000000        0.000000000     0.000000000        0.000000000
+              Name
+Y              Resident Evil: Revelations 2        Ride Rise of the Tomb Raider Risen 3: Titan Lords
+  Action                        0.025906736 0.000000000             0.000000000          0.000000000
+  Adventure                     0.000000000 0.000000000             0.050000000          0.000000000
+  Fighting                      0.000000000 0.000000000             0.000000000          0.000000000
+              Name
+Y              Rock Band 4 Rocket League Rodea the Sky Soldier Rory McIlroy PGA Tour    Rugby 15
+  Action       0.000000000   0.000000000           0.005181347           0.010362694 0.000000000
+  Adventure    0.000000000   0.000000000           0.000000000           0.000000000 0.000000000
+  Fighting     0.000000000   0.000000000           0.000000000           0.000000000 0.000000000
+              Name
+Y              Rugby Challenge 3 S??bastien Loeb Rally Evo    Sacred 3 Saint Seiya: Soldiers' Soul
+  Action             0.000000000               0.000000000 0.000000000                 0.000000000
+  Adventure          0.000000000               0.000000000 0.000000000                 0.000000000
+  Fighting           0.000000000               0.000000000 0.000000000                 0.032258065
+              Name
+Y              Saints Row IV Saints Row: Gat out of Hell Samurai Warriors 4 Samurai Warriors 4-II
+  Action         0.010362694                 0.005181347        0.005181347           0.005181347
+  Adventure      0.000000000                 0.000000000        0.000000000           0.000000000
+  Fighting       0.000000000                 0.000000000        0.000000000           0.000000000
+              Name
+Y              Samurai Warriors 4: Empires Senran Kagura: Estival Versus    Shape Up
+  Action                       0.005181347                   0.010362694 0.000000000
+  Adventure                    0.000000000                   0.000000000 0.000000000
+  Fighting                     0.000000000                   0.000000000 0.000000000
+              Name
+Y              Sherlock Holmes: Crimes & Punishments Shin Megami Tensei x Fire Emblem Shovel Knight
+  Action                                 0.000000000                      0.000000000   0.000000000
+  Adventure                              0.100000000                      0.000000000   0.000000000
+  Fighting                               0.000000000                      0.000000000   0.000000000
+              Name
+Y              Singstar: Ultimate Party Skylanders: SuperChargers Skylanders: Trap Team Sleeping Dogs
+  Action                    0.000000000               0.025906736           0.025906736   0.010362694
+  Adventure                 0.000000000               0.000000000           0.000000000   0.000000000
+  Fighting                  0.000000000               0.000000000           0.000000000   0.000000000
+              Name
+Y              Sniper Elite 3 Sonic Boom: Rise of Lyric Sonic Boom: Shattered Crystal
+  Action          0.000000000               0.005181347                   0.005181347
+  Adventure       0.000000000               0.000000000                   0.000000000
+  Fighting        0.000000000               0.000000000                   0.000000000
+              Name
+Y              South Park: The Stick of Truth    Splatoon SpongeBob: HeroPants Star Fox: Zero
+  Action                          0.000000000 0.000000000          0.000000000    0.000000000
+  Adventure                       0.000000000 0.000000000          0.000000000    0.000000000
+  Fighting                        0.000000000 0.000000000          0.000000000    0.000000000
+              Name
+Y              Star Wars Battlefront (2015) StarCraft II: Legacy of the Void State of Decay Stella Glow
+  Action                        0.000000000                      0.000000000    0.000000000 0.000000000
+  Adventure                     0.000000000                      0.000000000    0.000000000 0.000000000
+  Fighting                      0.000000000                      0.000000000    0.000000000 0.000000000
+              Name
+Y              Stranger of Sword City Street Fighter V Super Mario Maker Super Smash Bros. for Wii U and 3DS
+  Action                  0.000000000      0.000000000       0.000000000                         0.000000000
+  Adventure               0.000000000      0.000000000       0.000000000                         0.000000000
+  Fighting                0.000000000      0.032258065       0.000000000                         0.064516129
+              Name
+Y              Sword Art Online: Hollow Fragment Sword Art Online: Lost Song Tearaway Unfolded
+  Action                             0.000000000                 0.000000000       0.000000000
+  Adventure                          0.000000000                 0.000000000       0.000000000
+  Fighting                           0.000000000                 0.000000000       0.000000000
+              Name
+Y              Teenage Mutant Ninja Turtles: Danger of the Ooze
+  Action                                            0.000000000
+  Adventure                                         0.075000000
+  Fighting                                          0.000000000
+              Name
+Y              Teenage Mutant Ninja Turtles: Mutants in Manhattan    Terraria The Amazing Spider-Man 2 (2014)
+  Action                                              0.010362694 0.005181347                     0.010362694
+  Adventure                                           0.000000000 0.000000000                     0.000000000
+  Fighting                                            0.000000000 0.000000000                     0.000000000
+              Name
+Y              The Book of Unwritten Tales 2    The Crew The Crew: Wild Run The Elder Scrolls Online
+  Action                         0.000000000 0.000000000        0.005181347              0.000000000
+  Adventure                      0.025000000 0.000000000        0.000000000              0.000000000
+  Fighting                       0.000000000 0.000000000        0.000000000              0.000000000
+              Name
+Y              The Evil Within The Golf Club The King of Fighters XIV The Last of Us
+  Action           0.020725389   0.000000000              0.000000000    0.005181347
+  Adventure        0.000000000   0.000000000              0.000000000    0.000000000
+  Fighting         0.000000000   0.000000000              0.032258065    0.000000000
+              Name
+Y              The Legend of Heroes: Trails of Cold Steel II The Legend of Legacy
+  Action                                         0.000000000          0.000000000
+  Adventure                                      0.000000000          0.000000000
+  Fighting                                       0.000000000          0.000000000
+              Name
+Y              The Legend of Zelda: Majora's Mask 3D The LEGO Movie Videogame The Order: 1886   The Voice
+  Action                                 0.005181347              0.031088083     0.000000000 0.010362694
+  Adventure                              0.000000000              0.000000000     0.000000000 0.000000000
+  Fighting                               0.000000000              0.000000000     0.000000000 0.000000000
+              Name
+Y              The Walking Dead: Season One The Walking Dead: Season Two The Witch and the Hundred Knight
+  Action                        0.000000000                  0.000000000                      0.000000000
+  Adventure                     0.025000000                  0.125000000                      0.000000000
+  Fighting                      0.000000000                  0.000000000                      0.000000000
+              Name
+Y              The Witcher 3: Wild Hunt The Wolf Among Us Thief (2014)   Titanfall
+  Action                    0.000000000       0.000000000  0.025906736 0.000000000
+  Adventure                 0.000000000       0.100000000  0.000000000 0.000000000
+  Fighting                  0.000000000       0.000000000  0.000000000 0.000000000
+              Name
+Y              Tom Clancy's Rainbow Six: Siege Tom Clancy's The Division Tomb Raider (2013)
+  Action                           0.000000000               0.000000000        0.005181347
+  Adventure                        0.000000000               0.000000000        0.000000000
+  Fighting                         0.000000000               0.000000000        0.000000000
+              Name
+Y              Tony Hawk's Pro Skater 5 Total War: Attila Total War: WARHAMMER Toukiden Kiwami
+  Action                    0.000000000       0.000000000          0.000000000     0.005181347
+  Adventure                 0.000000000       0.000000000          0.000000000     0.000000000
+  Fighting                  0.000000000       0.000000000          0.000000000     0.000000000
+              Name
+Y              Toy Soldiers: War Chest TrackMania Turbo Transformer: Rise of the Dark Spark
+  Action                   0.005181347      0.005181347                         0.020725389
+  Adventure                0.000000000      0.000000000                         0.000000000
+  Fighting                 0.000000000      0.000000000                         0.000000000
+              Name
+Y              Transformer: Rise of the Dark Spark (3DS) Transformers: Devastation Trials Fusion   Tropico 5
+  Action                                     0.000000000               0.020725389   0.000000000 0.000000000
+  Adventure                                  0.000000000               0.000000000   0.000000000 0.000000000
+  Fighting                                   0.000000000               0.000000000   0.000000000 0.000000000
+              Name
+Y              UEFA Euro 2016 Ultimate NES Remix Uncharted 4: A Thief's End
+  Action          0.000000000        0.005181347                0.000000000
+  Adventure       0.000000000        0.000000000                0.000000000
+  Fighting        0.000000000        0.000000000                0.000000000
+              Name
+Y              Uncharted: The Nathan Drake Collection Under Night In-Birth  Until Dawn
+  Action                                  0.005181347          0.000000000 0.000000000
+  Adventure                               0.000000000          0.000000000 0.025000000
+  Fighting                                0.000000000          0.032258065 0.000000000
+              Name
+Y              Valentino Rossi: The Game Warriors Orochi 3 Wasteland 2  Watch Dogs Wolfenstein: The New Order
+  Action                     0.000000000       0.005181347 0.000000000 0.020725389                0.000000000
+  Adventure                  0.000000000       0.000000000 0.000000000 0.000000000                0.000000000
+  Fighting                   0.000000000       0.000000000 0.000000000 0.000000000                0.000000000
+              Name
+Y              World of Warcraft: Legion WRC 5: FIA World Rally Championship    WWE 2K16 Yoshi's New Island
+  Action                     0.000000000                         0.000000000 0.000000000        0.000000000
+  Adventure                  0.000000000                         0.000000000 0.000000000        0.000000000
+  Fighting                   0.000000000                         0.000000000 0.000000000        0.000000000
+              Name
+Y              Zero Escape: Zero Time Dilemma Zombie Army Trilogy      ZombiU
+  Action                          0.000000000         0.000000000 0.005181347
+  Adventure                       0.025000000         0.000000000 0.000000000
+  Fighting                        0.000000000         0.000000000 0.000000000
+ [ reached getOption("max.print") -- omitted 9 rows ]
+
+              Platform
+Y                     3DS         PC        PS3        PS4        PSV        Wii       WiiU       X360
+  Action       0.05699482 0.04145078 0.12953368 0.30051813 0.09326425 0.01036269 0.08808290 0.10362694
+  Adventure    0.12500000 0.02500000 0.15000000 0.20000000 0.10000000 0.02500000 0.05000000 0.17500000
+  Fighting     0.06451613 0.00000000 0.22580645 0.25806452 0.16129032 0.00000000 0.06451613 0.12903226
+  Misc         0.04545455 0.00000000 0.18181818 0.13636364 0.09090909 0.04545455 0.18181818 0.13636364
+  Platform     0.21052632 0.05263158 0.05263158 0.36842105 0.10526316 0.00000000 0.21052632 0.00000000
+  Puzzle       0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 0.00000000 1.00000000 0.00000000
+  Racing       0.00000000 0.10344828 0.13793103 0.27586207 0.00000000 0.00000000 0.03448276 0.17241379
+  Role-Playing 0.17142857 0.08571429 0.11428571 0.25714286 0.15714286 0.00000000 0.01428571 0.07142857
+  Shooter      0.00000000 0.14705882 0.14705882 0.32352941 0.01470588 0.00000000 0.02941176 0.11764706
+  Simulation   0.11111111 0.33333333 0.11111111 0.22222222 0.00000000 0.00000000 0.00000000 0.22222222
+  Sports       0.03076923 0.03076923 0.16923077 0.29230769 0.04615385 0.01538462 0.01538462 0.15384615
+  Strategy     0.12500000 0.50000000 0.00000000 0.25000000 0.00000000 0.00000000 0.00000000 0.00000000
+              Platform
+Y                    XOne
+  Action       0.17616580
+  Adventure    0.15000000
+  Fighting     0.09677419
+  Misc         0.18181818
+  Platform     0.00000000
+  Puzzle       0.00000000
+  Racing       0.27586207
+  Role-Playing 0.12857143
+  Shooter      0.22058824
+  Simulation   0.00000000
+  Sports       0.24615385
+  Strategy     0.12500000
+
+              Year
+Y                  [,1]      [,2]
+  Action       2014.725 0.7304593
+  Adventure    2014.375 0.5856182
+  Fighting     2014.710 0.7828814
+  Misc         2014.409 0.5032363
+  Platform     2015.000 0.8164966
+  Puzzle       2014.000        NA
+  Racing       2014.759 0.8304548
+  Role-Playing 2014.629 0.6846437
+  Shooter      2014.691 0.7581862
+  Simulation   2014.667 0.5000000
+  Sports       2014.908 0.7442084
+  Strategy     2015.000 0.5345225
+
+              Publisher
+Y                505 Games  Activision Aksys Games Alternative Software Arc System Works       Atlus
+  Action       0.005181347 0.134715026 0.000000000          0.000000000      0.000000000 0.000000000
+  Adventure    0.025000000 0.075000000 0.025000000          0.000000000      0.000000000 0.000000000
+  Fighting     0.000000000 0.000000000 0.000000000          0.000000000      0.096774194 0.032258065
+  Misc         0.000000000 0.136363636 0.000000000          0.000000000      0.000000000 0.000000000
+  Platform     0.000000000 0.052631579 0.000000000          0.000000000      0.000000000 0.000000000
+  Puzzle       0.000000000 0.000000000 0.000000000          0.000000000      0.000000000 0.000000000
+  Racing       0.034482759 0.000000000 0.000000000          0.000000000      0.000000000 0.000000000
+  Role-Playing 0.000000000 0.042857143 0.000000000          0.000000000      0.000000000 0.042857143
+  Shooter      0.058823529 0.205882353 0.000000000          0.000000000      0.000000000 0.000000000
+  Simulation   0.000000000 0.000000000 0.000000000          0.000000000      0.000000000 0.000000000
+  Sports       0.030769231 0.046153846 0.000000000          0.030769231      0.000000000 0.000000000
+  Strategy     0.000000000 0.125000000 0.000000000          0.000000000      0.000000000 0.000000000
+              Publisher
+Y              Bethesda Softworks Bigben Interactive      Capcom City Interactive Codemasters Deep Silver
+  Action              0.031088083        0.000000000 0.041450777      0.000000000 0.000000000 0.031088083
+  Adventure           0.000000000        0.000000000 0.000000000      0.000000000 0.000000000 0.000000000
+  Fighting            0.000000000        0.000000000 0.032258065      0.000000000 0.000000000 0.032258065
+  Misc                0.000000000        0.000000000 0.000000000      0.000000000 0.000000000 0.000000000
+  Platform            0.000000000        0.000000000 0.105263158      0.000000000 0.000000000 0.052631579
+  Puzzle              0.000000000        0.000000000 0.000000000      0.000000000 0.000000000 0.000000000
+  Racing              0.000000000        0.000000000 0.000000000      0.000000000 0.275862069 0.034482759
+  Role-Playing        0.071428571        0.000000000 0.000000000      0.000000000 0.000000000 0.085714286
+  Shooter             0.088235294        0.000000000 0.029411765      0.014705882 0.000000000 0.014705882
+  Simulation          0.000000000        0.000000000 0.000000000      0.000000000 0.000000000 0.000000000
+  Sports              0.000000000        0.107692308 0.000000000      0.000000000 0.000000000 0.000000000
+  Strategy            0.000000000        0.000000000 0.000000000      0.000000000 0.000000000 0.000000000
+              Publisher
+Y              Disney Interactive Studios Electronic Arts Focus Home Interactive       FuRyu
+  Action                      0.031088083     0.015544041            0.000000000 0.000000000
+  Adventure                   0.000000000     0.000000000            0.100000000 0.000000000
+  Fighting                    0.000000000     0.000000000            0.000000000 0.000000000
+  Misc                        0.090909091     0.000000000            0.000000000 0.000000000
+  Platform                    0.000000000     0.105263158            0.000000000 0.000000000
+  Puzzle                      0.000000000     0.000000000            0.000000000 0.000000000
+  Racing                      0.000000000     0.068965517            0.000000000 0.000000000
+  Role-Playing                0.000000000     0.042857143            0.028571429 0.014285714
+  Shooter                     0.000000000     0.191176471            0.000000000 0.000000000
+  Simulation                  0.000000000     0.000000000            0.000000000 0.000000000
+  Sports                      0.000000000     0.369230769            0.000000000 0.000000000
+  Strategy                    0.000000000     0.000000000            0.000000000 0.000000000
+              Publisher
+Y              Harmonix Music Systems Hello Games Idea Factory Idea Factory International inXile Entertainment
+  Action                  0.000000000 0.005181347  0.000000000                0.010362694          0.000000000
+  Adventure               0.000000000 0.000000000  0.025000000                0.000000000          0.000000000
+  Fighting                0.000000000 0.000000000  0.000000000                0.000000000          0.000000000
+  Misc                    0.045454545 0.000000000  0.000000000                0.000000000          0.000000000
+  Platform                0.000000000 0.000000000  0.000000000                0.000000000          0.000000000
+  Puzzle                  0.000000000 0.000000000  0.000000000                0.000000000          0.000000000
+  Racing                  0.000000000 0.000000000  0.000000000                0.000000000          0.000000000
+  Role-Playing            0.000000000 0.000000000  0.014285714                0.000000000          0.014285714
+  Shooter                 0.000000000 0.000000000  0.000000000                0.000000000          0.000000000
+  Simulation              0.000000000 0.000000000  0.000000000                0.000000000          0.000000000
+  Sports                  0.000000000 0.000000000  0.000000000                0.000000000          0.000000000
+  Strategy                0.000000000 0.000000000  0.000000000                0.000000000          0.000000000
+              Publisher
+Y              Kalypso Media  Koch Media Konami Digital Entertainment Little Orbit Marvelous Interactive
+  Action         0.000000000 0.000000000                  0.015544041  0.020725389           0.010362694
+  Adventure      0.000000000 0.000000000                  0.000000000  0.125000000           0.025000000
+  Fighting       0.000000000 0.000000000                  0.000000000  0.000000000           0.000000000
+  Misc           0.000000000 0.000000000                  0.000000000  0.000000000           0.000000000
+  Platform       0.000000000 0.000000000                  0.000000000  0.000000000           0.000000000
+  Puzzle         0.000000000 0.000000000                  0.000000000  0.000000000           0.000000000
+  Racing         0.000000000 0.000000000                  0.000000000  0.000000000           0.000000000
+  Role-Playing   0.000000000 0.000000000                  0.000000000  0.000000000           0.000000000
+  Shooter        0.000000000 0.000000000                  0.000000000  0.000000000           0.000000000
+  Simulation     0.333333333 0.333333333                  0.000000000  0.000000000           0.000000000
+  Sports         0.000000000 0.000000000                  0.092307692  0.000000000           0.000000000
+  Strategy       0.125000000 0.000000000                  0.000000000  0.000000000           0.000000000
+              Publisher
+Y              Microsoft Game Studios Milestone S.r.l Milestone S.r.l.      Mojang Namco Bandai Games
+  Action                  0.005181347     0.000000000      0.000000000 0.000000000        0.031088083
+  Adventure               0.000000000     0.000000000      0.000000000 0.100000000        0.075000000
+  Fighting                0.000000000     0.000000000      0.000000000 0.000000000        0.548387097
+  Misc                    0.000000000     0.000000000      0.000000000 0.000000000        0.000000000
+  Platform                0.000000000     0.000000000      0.000000000 0.000000000        0.000000000
+  Puzzle                  0.000000000     0.000000000      0.000000000 0.000000000        0.000000000
+  Racing                  0.103448276     0.034482759      0.137931034 0.000000000        0.034482759
+  Role-Playing            0.014285714     0.000000000      0.000000000 0.000000000        0.185714286
+  Shooter                 0.014705882     0.000000000      0.000000000 0.000000000        0.000000000
+  Simulation              0.000000000     0.000000000      0.000000000 0.000000000        0.000000000
+  Sports                  0.015384615     0.000000000      0.000000000 0.000000000        0.000000000
+  Strategy                0.125000000     0.000000000      0.000000000 0.000000000        0.000000000
+              Publisher
+Y                 Nintendo Nippon Ichi Software Nordic Games Paradox Interactive       PQube
+  Action       0.041450777          0.005181347  0.005181347         0.000000000 0.020725389
+  Adventure    0.000000000          0.000000000  0.025000000         0.000000000 0.000000000
+  Fighting     0.064516129          0.032258065  0.000000000         0.000000000 0.032258065
+  Misc         0.136363636          0.045454545  0.000000000         0.000000000 0.000000000
+  Platform     0.263157895          0.000000000  0.000000000         0.000000000 0.000000000
+  Puzzle       1.000000000          0.000000000  0.000000000         0.000000000 0.000000000
+  Racing       0.034482759          0.000000000  0.034482759         0.000000000 0.000000000
+  Role-Playing 0.071428571          0.200000000  0.000000000         0.000000000 0.000000000
+  Shooter      0.029411765          0.000000000  0.000000000         0.000000000 0.000000000
+  Simulation   0.111111111          0.000000000  0.000000000         0.111111111 0.000000000
+  Sports       0.030769231          0.000000000  0.000000000         0.000000000 0.000000000
+  Strategy     0.125000000          0.000000000  0.000000000         0.000000000 0.000000000
+              Publisher
+Y              Rebellion Developments Revolution Software        Sega Slightly Mad Studios
+  Action                  0.000000000         0.000000000 0.010362694          0.000000000
+  Adventure               0.000000000         0.025000000 0.000000000          0.000000000
+  Fighting                0.000000000         0.000000000 0.032258065          0.000000000
+  Misc                    0.000000000         0.000000000 0.090909091          0.000000000
+  Platform                0.000000000         0.000000000 0.000000000          0.000000000
+  Puzzle                  0.000000000         0.000000000 0.000000000          0.000000000
+  Racing                  0.000000000         0.000000000 0.000000000          0.068965517
+  Role-Playing            0.000000000         0.000000000 0.000000000          0.000000000
+  Shooter                 0.029411765         0.000000000 0.029411765          0.000000000
+  Simulation              0.000000000         0.000000000 0.111111111          0.000000000
+  Sports                  0.000000000         0.000000000 0.000000000          0.000000000
+  Strategy                0.000000000         0.000000000 0.250000000          0.000000000
+              Publisher
+Y              Sony Computer Entertainment Sony Computer Entertainment America
+  Action                       0.041450777                         0.000000000
+  Adventure                    0.000000000                         0.000000000
+  Fighting                     0.000000000                         0.000000000
+  Misc                         0.045454545                         0.000000000
+  Platform                     0.210526316                         0.000000000
+  Puzzle                       0.000000000                         0.000000000
+  Racing                       0.000000000                         0.000000000
+  Role-Playing                 0.014285714                         0.000000000
+  Shooter                      0.029411765                         0.000000000
+  Simulation                   0.000000000                         0.000000000
+  Sports                       0.030769231                         0.030769231
+  Strategy                     0.000000000                         0.000000000
+              Publisher
+Y              Sony Computer Entertainment Europe Square Enix Take-Two Interactive  Tecmo Koei Telltale Games
+  Action                              0.000000000 0.067357513          0.010362694 0.036269430    0.005181347
+  Adventure                           0.025000000 0.075000000          0.000000000 0.000000000    0.250000000
+  Fighting                            0.000000000 0.000000000          0.000000000 0.064516129    0.000000000
+  Misc                                0.090909091 0.000000000          0.000000000 0.000000000    0.000000000
+  Platform                            0.000000000 0.000000000          0.000000000 0.000000000    0.000000000
+  Puzzle                              0.000000000 0.000000000          0.000000000 0.000000000    0.000000000
+  Racing                              0.000000000 0.000000000          0.000000000 0.000000000    0.000000000
+  Role-Playing                        0.000000000 0.085714286          0.000000000 0.042857143    0.000000000
+  Shooter                             0.000000000 0.000000000          0.132352941 0.000000000    0.000000000
+  Simulation                          0.000000000 0.000000000          0.000000000 0.000000000    0.000000000
+  Sports                              0.000000000 0.000000000          0.184615385 0.000000000    0.000000000
+  Strategy                            0.000000000 0.000000000          0.000000000 0.125000000    0.000000000
+              Publisher
+Y              Tru Blu Entertainment     Ubisoft     Unknown Warner Bros. Interactive Entertainment
+  Action                 0.000000000 0.119170984 0.005181347                            0.238341969
+  Adventure              0.000000000 0.000000000 0.000000000                            0.000000000
+  Fighting               0.000000000 0.000000000 0.000000000                            0.032258065
+  Misc                   0.000000000 0.318181818 0.000000000                            0.000000000
+  Platform               0.000000000 0.105263158 0.000000000                            0.000000000
+  Puzzle                 0.000000000 0.000000000 0.000000000                            0.000000000
+  Racing                 0.000000000 0.137931034 0.000000000                            0.000000000
+  Role-Playing           0.000000000 0.028571429 0.000000000                            0.000000000
+  Shooter                0.000000000 0.117647059 0.000000000                            0.000000000
+  Simulation             0.000000000 0.000000000 0.000000000                            0.000000000
+  Sports                 0.015384615 0.000000000 0.015384615                            0.000000000
+  Strategy               0.000000000 0.125000000 0.000000000                            0.000000000
+              Publisher
+Y              WayForward Technologies Xseed Games Yacht Club Games
+  Action                   0.000000000 0.005181347      0.000000000
+  Adventure                0.025000000 0.000000000      0.000000000
+  Fighting                 0.000000000 0.000000000      0.000000000
+  Misc                     0.000000000 0.000000000      0.000000000
+  Platform                 0.000000000 0.000000000      0.105263158
+  Puzzle                   0.000000000 0.000000000      0.000000000
+  Racing                   0.000000000 0.000000000      0.000000000
+  Role-Playing             0.000000000 0.000000000      0.000000000
+  Shooter                  0.000000000 0.014705882      0.000000000
+  Simulation               0.000000000 0.000000000      0.000000000
+  Sports                   0.000000000 0.000000000      0.000000000
+  Strategy                 0.000000000 0.000000000      0.000000000
+
+              NA_Sales(millions)
+Y                   [,1]       [,2]
+  Action       0.2463731 0.42529072
+  Adventure    0.1012500 0.12057953
+  Fighting     0.3251613 0.72364757
+  Misc         0.3736364 0.49438317
+  Platform     0.2468421 0.30697544
+  Puzzle       0.5600000         NA
+  Racing       0.2265517 0.58725923
+  Role-Playing 0.2901429 0.64677459
+  Shooter      0.6505882 0.79942681
+  Simulation   0.1100000 0.15083103
+  Sports       0.3923077 0.58616809
+  Strategy     0.0750000 0.07171372
+
+              EU_Sales(millions)
+Y                   [,1]       [,2]
+  Action       0.2608290 0.52558632
+  Adventure    0.1200000 0.17741737
+  Fighting     0.1748387 0.30100798
+  Misc         0.3609091 0.63730018
+  Platform     0.2747368 0.31134776
+  Puzzle       0.3600000         NA
+  Racing       0.3148276 0.49070373
+  Role-Playing 0.2542857 0.60093302
+  Shooter      0.6017647 0.71392742
+  Simulation   0.2755556 0.29496233
+  Sports       0.1980000 0.53514075
+  Strategy     0.1112500 0.09847951
+
+              JP_Sales(millions)
+Y                    [,1]       [,2]
+  Action       0.03036269 0.07086058
+  Adventure    0.00475000 0.01320208
+  Fighting     0.16290323 0.44299130
+  Misc         0.03954545 0.07134606
+  Platform     0.08842105 0.21603146
+  Puzzle       0.19000000         NA
+  Racing       0.05000000 0.23497720
+  Role-Playing 0.11014286 0.37488740
+  Shooter      0.05470588 0.17926442
+  Simulation   0.16000000 0.46154631
+  Sports       0.01600000 0.04506246
+  Strategy     0.00250000 0.00462910
+
+              Other_Sales(millions)
+Y                    [,1]       [,2]
+  Action       0.08616580 0.19018854
+  Adventure    0.03350000 0.04458067
+  Fighting     0.07258065 0.12339551
+  Misc         0.12000000 0.22757521
+  Platform     0.07684211 0.08233081
+  Puzzle       0.09000000         NA
+  Racing       0.06310345 0.11430234
+  Role-Playing 0.07628571 0.16774870
+  Shooter      0.19926471 0.27498340
+  Simulation   0.04444444 0.03539460
+  Sports       0.09569231 0.20450374
+  Strategy     0.01750000 0.01035098
+
+              Global_Sales(millions)
+Y                   [,1]      [,2]
+  Action       0.6350259 1.2646900
+  Adventure    0.2587500 0.3377162
+  Fighting     0.7354839 1.5385444
+  Misc         0.8936364 1.3555759
+  Platform     0.6873684 0.8278274
+  Puzzle       1.1900000        NA
+  Racing       0.6517241 1.3550621
+  Role-Playing 0.7712857 1.9427755
+  Shooter      1.5063235 1.7698005
+  Simulation   0.5900000 0.9089142
+  Sports       0.7016923 1.0529194
+  Strategy     0.2025000 0.1475272
